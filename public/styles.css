@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{
+	box-sizing: border-box;
+}
+
+html{
+	height:100%;
+	width:100%;
+	background-color: #79dcca;
+	background-position:center 0px;
+	background-size:100%;
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+body{
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size:12pt;
+	margin:0px;
+	background-attachment: fixed;
+	background-repeat: repeat-y;
+	width:100%;
+	padding-top: 20px;
+	background-image: url('assets/images/back.png');
+	background-size: cover;
+}
+
+main{
+	width: 1024px;
+	height: auto;
+	background: white;
+	box-shadow: 0 3px 3px black;
+	position: relative;
+	margin: 0px auto 20px auto;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+}
+
+ul, li{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+
+#inventory{
+	width: 760px;
+	height: auto;
+	background: white;
+	display: inline-block;
+}
+
+#inventory ul{
+	width: 100%;
+	padding-top: 20px;
+}
+
+#inventory .inventory_item{
+	width: 225px;
+	height: 320px;
+	background: #f5f5f5;
+	box-shadow: 0 2px 2px rgba(0,0,0,.5);
+	display: inline-block;
+	margin-left: 20px;
+	margin-bottom: 20px;
+	text-align: left;
+	font-size: 16px;
+	padding: 8px;
+}
+
+#inventory .inventory_item p{
+	font-size: 12px;
+	height: 68px;
+}
+
+#inventory .inventory_item .price{
+	font-weight: 800;
+}
+
+#inventory .inventory_item .add{
+	width: 25px;
+	height: 25px;
+	background: #7DD281 none repeat scroll 0% 0%;
+	border-radius: 100%;
+	display: block;
+	float: right;
+	color: white;
+	text-align: center;
+	font-size: 17px;
+	font-weight: 100;
+	cursor: pointer;
+
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+#cart{
+	width: 235px;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 20px;
+	min-height: 320px;
+	border-left: 1px solid rgba(0,0,0,.3);
+	padding-left: 20px;
+}
+
+#cart h3{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#cart ul{
+	height: 175px;
+	overflow: scroll;
+	overflow-x: hidden;
+	margin-bottom: 20px;
+}
+
+#cart li{
+	font-size: 14px;
+	text-align: right;
+	padding-right: 20px;
+	color: rgba(0,0,0,.6);
+	padding: 8px 20px 8px 0; 
+}
+
+#cart li:nth-child(odd){
+	background-color: rgba(0,0,0,.03);
+}
+
+#cart li a{
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+#cart li a.item_price{
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 5px;
+	font-size: 7px;
+	margin-left: 5px;
+}
+
+#cart li span.remove{
+	display: none;
+}
+
+#cart li:hover span.remove{
+	width: 10px;
+	height: 10px;
+	background-color: rgba(0,0,0,.3);
+	display: inline-block;
+	border-radius: 100%;
+	margin-left: 5px;
+	cursor: pointer;
+	background-image: url('/assets/images/remove.png');
+	background-position: 50%;
+	background-size: 60%;
+	background-repeat: no-repeat;
+}
+
+#cart li:hover{
+	transform-origin: 100% 50% 0px;
+	-webkit-transform-origin: 100% 50% 0px;
+
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#cart form{
+	font-size: 20px;
+	font-weight: 100;
+}
+
+#cart form input[type="submit"], #false_purchase{
+	width: 100%;
+	padding: 9px 0px;
+	display: block;
+	border: 0px solid transparent;
+	background: rgb(121, 220, 128) none repeat scroll 0% 0%;
+	color: white;
+	font-size: 18px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+}
+
+#cart form #total{
+	text-align: right;
+	margin-bottom: 10px;
+}
+
+#cart form #total_value{
+	font-weight: 800;
+	margin-left: 10px;
+}
+
+*[data-display=false]{
+	display: none;
+}
+
+#card_creds, #receipt{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
+}
+
+.container{
+	width: 400px;
+	height: auto;
+	background: white none repeat scroll 0% 0%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -100px;
+	box-shadow: 0px 5px 10px black;
+	padding: 20px;
+}
+
+#card_creds label{
+	width: 100%;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+#card_creds input{
+	border-radius: 3px;
+	border: 1px solid rgb(194, 194, 194);
+	font-size: 18px;
+	padding: 3px;
+	color: rgb(107, 107, 107);
+}
+
+#receipt h3, #receipt p{
+	text-align: center;
+}
+
+#receipt p{
+	font-size: 10px;
+}
+
+#receipt ul{
+	max-height: 100px;
+	overflow: scroll;
+}
+
+#receipt ul li:nth-child(odd){
+	background-color: rgba(0,0,0,.03);
+}
+
+#done{
+	text-align: center;
+	background: rgb(121, 220, 128) none repeat scroll 0% 0%;
+	color: white;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 10px;
+	margin: 20px 20px 0px;
+	cursor: pointer;
+}

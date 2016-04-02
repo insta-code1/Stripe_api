@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<title>AwesomeStoresome || WDM Stripe Tutorial</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="styles.css" type="text/css" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+	<main>
+
+		<div id="inventory">
+
+			<ul>
+				
+				<li class="inventory_item" data-name="Assorted Cheese" data-product-id="ass_cheese" data-price="3299">
+
+					<img src="assets/images/assorted.png" />
+
+					<h3>Assorted Cheese</h3>
+
+					<p class="info">
+						So many cheeses, so little time. So let us pick for you! With this delightful range of assorted cheeses, you won't be left wanting
+					</p>
+
+					<div class="price">
+						<span>&pound;32.99</span>
+						<span class="add">&plus;</span>
+					</div>
+
+				</li>
+
+				<li class="inventory_item" data-name="Cheddar Cheese" data-product-id="che_cheese" data-price="865">
+
+					<img src="assets/images/cheese.png" />
+
+					<h3>Cheddar Cheese</h3>
+
+					<p class="info">
+						A full, yellow cheese with all the fun
+						of modern twists in a familiar tradtional
+						package that won’t scare our chief
+						clientele.
+					</p>
+
+					<div class="price">
+						<span>&pound;8.65</span>
+						<span class="add">&plus;</span>
+					</div>
+
+				</li>
+
+				<li class="inventory_item" data-name="Feta Cheese" data-product-id="fet_cheese" data-price="985">
+
+					<img src="assets/images/feta.png" />
+
+					<h3>Feta Cheese</h3>
+
+					<p class="info">
+						It's cheese from a sheep AND it's Greek! 
+						What more could you possibly want to know?
+
+					</p>
+
+					<div class="price">
+						<span>&pound;9.85</span>
+						<span class="add">&plus;</span>
+					</div>
+
+				</li>
+
+				<li class="inventory_item" data-name="Blue Cheese" data-product-id="blu_cheese" data-price="1899">
+
+					<img src="assets/images/blue.png" />
+
+					<h3>Blue Cheese</h3>
+
+					<p class="info">
+						It's discovery was an accident, 
+						but this purchase will be no mistake!
+						If you love strong, STRONG cheese,
+						blue cheese will kick yer teeth in.
+					</p>
+
+					<div class="price">
+						<span>&pound;18.99</span>
+						<span class="add">&plus;</span>
+					</div>
+
+				</li>
+
+				<li class="inventory_item" data-name="Camambert" data-product-id="cam_cheese" data-price="1225">
+
+					<img src="assets/images/camembert.png" />
+
+					<h3>Camambert</h3>
+
+					<p class="info">
+						Whereas Ice Cube may be Straight Outta Compton,
+						This Camambert is fresh from Normandie and is 
+						smooth, aromatic and creamy.
+					</p>
+
+					<div class="price">
+						<span>&pound;12.25</span>
+						<span class="add">&plus;</span>
+					</div>
+
+				</li>
+
+				<li class="inventory_item" data-name="Brie" data-product-id="bri_cheese" data-price="999">
+
+					<img src="assets/images/brie.png" />
+
+					<h3>Brie</h3>
+
+					<p class="info">
+						To Brie or not to Brie?
+						There is no question. We love Brie,
+						You love Brie. Have some Brie.
+					</p>
+
+					<div class="price">
+						<span>&pound;9.99</span>
+						<span class="add">&plus;</span>
+					</div>
+
+				</li>
+
+				<li class="inventory_item" data-name="Goat's Cheese" data-product-id="nor_cheese" data-price="655">
+
+					<img src="assets/images/norman.png" />
+
+					<h3>Goat's Cheese</h3>
+
+					<p class="info">
+						This Cheese is straight from our in-house goat, Norman.
+						Norman is fed the best of chives, giving this cheese a unique,
+						tangy flavour.
+					</p>
+
+					<div class="price">
+						<span>&pound;6.55</span>
+						<span class="add">&plus;</span>
+					</div>
+
+				</li>
+
+				<li class="inventory_item" data-name="Mozarella" data-product-id="moz_cheese" data-price="1799">
+
+					<img src="assets/images/mozzarella.png" />
+
+					<h3>Mozarella</h3>
+
+					<p class="info">
+						When the cheese hits your eyes, like a big pizza pie,
+						Mozarella! Come with me, can't you see, you and me, always having
+						Mozarella!
+					</p>
+
+					<div class="price">
+						<span>&pound;17.99</span>
+						<span class="add">&plus;</span>
+					</div>
+
+				</li>
+
+
+			</ul>
+
+		</div>
+
+		<div id="cart">
+
+			<h3>Shopping List</h3>
+
+			<ul id="purchase_list">
+
+			</ul>
+
+			<form id="purchaseForm">
+				<div id="total">Total:<a id="total_value">£0.00</a></div>
+				<button id="false_purchase">Purchase</button>
+				<div id="card_creds" data-display="false">
+
+					<div class="container">
+						<h3>Please enter your card details</h3>
+						<label>
+							<span>Card Number</span>
+							<input type="text" size="20" data-stripe="number"/>
+						</label>
+						<label>
+							<span>CVC</span>
+							<input type="text" size="4" data-stripe="cvc"/>
+						</label>
+						<label>
+							<span>Expiration (MM/YYYY)</span>
+							<input type="text" size="2" data-stripe="exp-month"/>
+							<span> / </span>
+							<input type="text" size="4" data-stripe="exp-year"/>
+						</label>
+
+						<input type="submit" value="Pay" />
+					</div>
+				</div>
+
+			</form>
+
+		</div>
+
+		<div id="receipt" data-display="false">
+			<div class="container">
+				<h3>Order Confirmed</h3>
+				<p>Thanks for ordering your cheese with AwesomeStoresome</p>
+				<h4>You bought:</h4>
+				<ul id="tally">
+
+				</ul>
+				<div id="done">Finish</div>
+			</div>
+
+		</div>
+
+	</main>
+
+
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+	<script src="scripts/storeUI.js"></script>
+	<script src="scripts/core.js"></script>
+
+</body>
+</html>

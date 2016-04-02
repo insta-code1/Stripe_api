@@ -1,0 +1,13 @@
+{
+  "name": "WDM-Demo-Store",
+  "description": "A demo store to show off the Stripe API",
+  "version": "0.0.1",
+  "private": true,
+  "scripts" : {
+    "start" : "node ./stripeServer.js"
+  },
+  "dependencies": {
+    "express": "4.x.x",
+    "body-parser" : "1.4.x"
+  }
+}
